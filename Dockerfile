@@ -6,7 +6,9 @@ RUN apt-get update \
 && curl -s --remote-name http://packages.ntop.org/apt/18.04/all/apt-ntop.deb \
 && dpkg -i apt-ntop.deb \
 && rm -rf apt-ntop.deb \
+&& apt-get update \
 && apt-get -y -q install ntopng redis-server libpcap* libmysqlclient* \
+&& sed s/bind\ 127.0.0.1\ \:\:1/bind\ 127.0.0.1/g -i /etc/redis/redis.conf \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 3000
