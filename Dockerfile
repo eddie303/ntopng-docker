@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER Eduard Istvan Sas <eduard.istvan.sas@gmail.com>
 
 RUN apt-get update \
-&& apt-get -y -q install curl \
+&& apt-get -y -q install curl gnupg lsb-release \
 && curl -s --remote-name http://packages.ntop.org/apt/18.04/all/apt-ntop.deb \
 && dpkg -i apt-ntop.deb \
 && rm -rf apt-ntop.deb \
