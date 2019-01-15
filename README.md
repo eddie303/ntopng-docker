@@ -5,5 +5,5 @@ ntopng-docker
 
 #### Install & Run
 ```
-docker run --net=host -t -p 3000:3000 lucaderi/ntopng-docker <ntopng arguments>
+docker run --net=host -t -p 3000:3000 eddie303/ntopng-docker <ntopng arguments>
 ```
